@@ -1,18 +1,18 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
+import {Paper} from "@mui/material";
 
-import {Header, Sidebar} from "../components";
+import {Header, Navbar} from "../components";
+import './MainLayout.css'
 
 
 const MainLayout = () => {
     return (
-        <div>
+        <Paper className={'layoutContainer'}>
             <Header/>
-            <div>
-                <Sidebar/>
-                <Outlet/>
-            </div>
-        </div>
+            <Navbar/>
+            <Outlet/>
+        </Paper>
     )
 }
 

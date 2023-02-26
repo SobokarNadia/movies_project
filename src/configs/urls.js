@@ -1,14 +1,14 @@
 const baseURL = 'https://api.themoviedb.org/3';
 
+const poster = 'https://image.tmdb.org/t/p/w500';
 
 const urls = {
-    movies:{
-        allMovies: (page) => `/discover/movie?page=${page}`,
-        moviesByGenre: (page=1, ids) => `/discover/movie?page=${page}&with_genres=${ids}`,
-        getImage: (id) => `/movie/${id}/images`
-    },
+    allMovies: (page) => `/discover/movie?page=${page}`,
+    moviesByGenre: (page, ids) => `/discover/movie?page=${page}&with_genres=${ids}`,
+    movieById: (id) => `/movie/${id}`,
     genres: '/genre/movie/list',
-    search: (keyWord, page =1) => `/search/keyword?query=${keyWord}&page=${page}`
+    search: (keyWord, page) => `/search/keyword?query=${keyWord}&page=${page}`,
+    topRated: '/movie/top_rated'
 }
 
-export {baseURL, urls}
+export {baseURL, urls, poster}
